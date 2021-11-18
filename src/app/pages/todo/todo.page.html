@@ -1,0 +1,9 @@
+
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <div class="content" *ngFor="let todo of allTodo">
+      {{todo.text}}
+    </div>
+    <ion-button expand="full" (click)="save()">Salvar</ion-button>
+  </div>
+</ion-content>
