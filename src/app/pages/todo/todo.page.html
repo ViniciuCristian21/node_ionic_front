@@ -4,6 +4,11 @@
     <div class="content">
       <h1 class="title">Todo list</h1>
       <div class="todo-header">
+
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+
         <ion-button expand="full" [routerLink]="['/todo-list/']">Adicionar novo</ion-button>
       </div>
       <div class="todo-body">
@@ -21,8 +26,8 @@
                     <ion-button>
                       <ion-icon name="create" size="large" color="success"></ion-icon>
                     </ion-button>
-                    <ion-button>
-                      <ion-icon name="trash" size="large" color="danger" (click)="delete(todo.id)"></ion-icon>
+                    <ion-button (click)="deleteTodo(todo.id)">
+                      <ion-icon name="trash" size="large" color="danger"></ion-icon>
                     </ion-button>
                   </ion-buttons>
                 </div>
