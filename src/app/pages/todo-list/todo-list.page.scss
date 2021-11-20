@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 800px;
+  height: auto;
+
+  margin: 2rem auto;
+
+  h1 {
+    font-size: 125%;
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+}
+.todo-input {
+  width: 100%;
+  padding: 0.5rem;
+  height: auto;
+}
+
+.todo-button {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+
+ion-textarea {
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.4);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 115%;
+    overflow: hidden;
+}

@@ -7,10 +7,12 @@ import { api } from 'src/services/api';
 })
 export class TodoPage implements OnInit {
   allTodo: any = [];
+  len: any;
   constructor() { }
 
   ngOnInit() {
     this.getAll();
+
   }
 
   getAll(){
@@ -20,17 +22,15 @@ export class TodoPage implements OnInit {
         id: element.id,
         text: element.text,
       })
-      });;
+      });
     })
 
     console.log(this.allTodo)
+    console.log(this.allTodo.length)
   }
-  save(){
-    api.post('text', {
-      text: 'Qual quer coisa',
-    }).then(response => {
-      console.log(response.data)
-    })
+
+  delete(id: string) {
+
   }
 
 }

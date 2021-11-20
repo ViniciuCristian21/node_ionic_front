@@ -1,0 +1,14 @@
+
+<ion-content [fullscreen]="true">
+  <div class="main">
+    <div class="title">
+      <h1>Adicionar Todo</h1>
+    </div>
+    <div class="todo-input">
+      <ion-textarea name="text" id="text" [(ngModel)]="todo.text"></ion-textarea>
+    </div>
+    <div class="todo-button">
+      <ion-button expand="full" (click)="save()">Salvar</ion-button>
+    </div>
+  </div>
+</ion-content>
