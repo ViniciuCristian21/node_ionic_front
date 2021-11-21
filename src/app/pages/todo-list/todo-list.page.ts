@@ -17,12 +17,19 @@ export class TodoListPage implements OnInit {
   ngOnInit() {
     this.todo = new Todo();
     this.Uid = this.activatedRoute.snapshot.params['id'];
+    console.log(this.Uid)
   }
 
   save(){
     if (this.Uid) {
       try {
-
+        api.post("/text/update", {
+          id: this.Uid,
+          text: this.todo.text,
+        }).then(response => {
+          console.log(response.data)
+        })
+        this.router.navigate(['/todo/']);
       } catch (error) {
         console.log(error)
       }

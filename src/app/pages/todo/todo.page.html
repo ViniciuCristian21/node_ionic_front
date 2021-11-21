@@ -23,7 +23,7 @@
               <ion-col size="2">
                 <div class="buttons">
                   <ion-buttons>
-                    <ion-button>
+                    <ion-button [routerLink]="['/todo-list/update/', todo.id]">
                       <ion-icon name="create" size="large" color="success"></ion-icon>
                     </ion-button>
                     <ion-button (click)="deleteTodo(todo.id)">
