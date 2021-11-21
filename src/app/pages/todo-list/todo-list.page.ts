@@ -1,7 +1,7 @@
 import { Todo } from './../../../entities/Todo';
 import { Component, OnInit } from '@angular/core';
 import { api } from 'src/services/api';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,19 +10,34 @@ import { Router } from '@angular/router';
 })
 export class TodoListPage implements OnInit {
   todo: Todo;
-  constructor(private router: Router) { }
+  Uid: string;
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit() {
     this.todo = new Todo();
+    this.Uid = this.activatedRoute.snapshot.params['id'];
   }
 
   save(){
-    api.post('text', {
-      text: this.todo.text,
-    }).then(response => {
-      console.log(response.data)
-    })
-    this.router.navigate(['/todo/']);
+    if (this.Uid) {
+      try {
+
+      } catch (error) {
+        console.log(error)
+      }
+    }else {
+      try {
+        api.post('text', {
+          text: this.todo.text,
+        }).then(response => {
+          console.log(response.data)
+        })
+        this.router.navigate(['/todo/']);
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 
 }
